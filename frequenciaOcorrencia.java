@@ -1,28 +1,28 @@
 import java.util.Scanner;
 
-class TrabalhoEdRelatorioFrequencia {
+class FrequenciaOcorrencia {
 
 	public static void main(String[] args) {
 		Scanner scanner = new Scanner(System.in);
 
 		Metodos metodos = new Metodos();
 
-		// loop para receber os números
+		// loop para receber os nÃºmeros
 		for (int i = 0; i < 10; i++) {
-			System.out.println("Digite o " + (i + 1) + "º número: ");
+			System.out.println("Digite o " + (i + 1) + "Âº nÃºmero: ");
 			double num = scanner.nextDouble();
 			metodos.addLast(num);
 		}
 
 		scanner.close();
 
-		// Imprimindo informações
-		System.out.println("\n\nRELATÓRIO DE FREQUÊNCIA");
+		// Imprimindo informaÃ§Ãµes
+		System.out.println("\n\nRELATÃ“RIO DE FREQUÃŠNCIA");
 		System.out.println("==============================================================");
 		metodos.ocorrenciasUnicas();
 		metodos.frequencia();
-		System.out.println("\nLISTA DE NÚMEROS: " + metodos.toString());
-		System.out.printf("MÉDIA: %.2f\n", metodos.media());
+		System.out.println("\nLISTA DE NÃšMEROS: " + metodos.toString());
+		System.out.printf("MÃ‰DIA: %.2f\n", metodos.media());
 		System.out.println("==============================================================");
 
 	}
@@ -43,12 +43,12 @@ class Metodos {
 		lista_numeros = new double[max];
 		ocorrencias = new double[max];
 		quantOcorrencias = new int[max];
-		livreLista = 0; // a posição livre máxima é 0
+		livreLista = 0; // a posiÃ§Ã£o livre mÃ¡xima Ã© 0
 		livreOcorrencias = 0;
 		posicaoQuantOcorrencia = 0;
 	}
 
-	// Método para adicionar elementos na lista de números
+	// MÃ©todo para adicionar elementos na lista de nÃºmeros
 	public void addLast(double elemento) {
 		if (livreLista < max) {
 			lista_numeros[livreLista] = elemento;
@@ -58,7 +58,7 @@ class Metodos {
 		}
 	}
 
-	// Método para adicionar elementos na lista de ocorrências
+	// MÃ©todo para adicionar elementos na lista de ocorrÃªncias
 	public void addLastOcorrencias(double elemento) {
 		if (livreOcorrencias < max) {
 			ocorrencias[livreOcorrencias] = elemento;
@@ -68,29 +68,29 @@ class Metodos {
 		}
 	}
 
-	// Método para adicionar quantidade de cada ocorrência na lista de quantidade de
-	// ocorrências
+	// MÃ©todo para adicionar quantidade de cada ocorrÃªncia na lista de quantidade de
+	// ocorrÃªncias
 	public void addQuantOcorrencias(int vezes) {
 		quantOcorrencias[posicaoQuantOcorrencia] = vezes;
 		posicaoQuantOcorrencia++;
 	}
 
-	// Método que retorna o índice
+	// MÃ©todo que retorna o Ã­ndice
 	public double get(int i) {
 		if ((i >= 0) && (i < size())) {
 			return lista_numeros[i];
 		} else {
-			System.out.println("Índice do vetor não encontrado!");
+			System.out.println("Ãndice do vetor nÃ£o encontrado!");
 		}
 		return 0;
 	}
 
-	// Método que retorna o tamanho da lista
+	// MÃ©todo que retorna o tamanho da lista
 	public int size() {
 		return this.livreLista;
 	}
 
-	// Método para separar as ocorrências únicas
+	// MÃ©todo para separar as ocorrÃªncias Ãºnicas
 	public void ocorrenciasUnicas() {
 		for (int i = 0; i < 10; i++) {
 			double numero = get(i);
@@ -109,7 +109,7 @@ class Metodos {
 		}
 	}
 
-	// Método frequência
+	// MÃ©todo frequÃªncia
 	public void frequencia() {
 		int vezes = 0;
 		for (int i = 0; i < livreOcorrencias; i++) {
@@ -130,7 +130,7 @@ class Metodos {
 		}
 	}
 
-	// Método toString
+	// MÃ©todo toString
 	public String toString() {
 		StringBuffer sf = new StringBuffer();
 		sf.append("[ ");
@@ -142,7 +142,7 @@ class Metodos {
 		return sf.toString();
 	}
 
-	// Método média
+	// MÃ©todo mÃ©dia
 	public double media() {
 		double soma = 0;
 		for (int i = 0; i < size(); i++) {
